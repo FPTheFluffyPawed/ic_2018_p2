@@ -35,7 +35,7 @@ typedef struct {
     int points;
 } player2;
 
-int main(char *argv[]) {
+int main(int argc, char *argv[]) {
 
 	FILE *fp;
 	char buff[255], good[2], rsrc[2];
@@ -44,12 +44,13 @@ int main(char *argv[]) {
 	int pos;
     int i, j;
 	int num;
-	char run, a;
+	char run;
+	char a;
 	run = a;
 	block *map;
 
 
-        fp = fopen("map.ini", "r");
+        fp = fopen(argv[1], "r");
         if (fp == NULL) {
             perror("Can't open INI");
             exit(1);
@@ -156,7 +157,7 @@ while (run == a){
 int options(int turn, block *map)
 {
   int player = 1;
-  int i, c, o, roll, dice1, dice2;
+  int i, o, roll, dice1, dice2;
   char option[2];
   srand(time(NULL));
 
