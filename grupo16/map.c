@@ -25,7 +25,7 @@ int main(int argc, char *argv[]) {
 	int num;
 	block *map;
 
-	fp = fopen("map.ini", "r");
+	fp = fopen(argv[1], "r");
 	if (fp == NULL) {
 		perror("Can't open INI");
 		exit(1);
